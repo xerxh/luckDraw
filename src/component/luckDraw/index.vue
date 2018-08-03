@@ -3,9 +3,9 @@
     <table border="0" cellpadding="0" cellspacing="0">
         <tr :key="index" v-for="(item, index) in imgs">
             <!-- 奖品列 -->
-            <td :key="classMark" v-for="(img, classMark) in item" 
-            :class="classMark">
-                <a v-if="img=='抽奖按钮'" href="#" @click.prevent="handClick">                   
+            <td :key="classMark" v-for="(img, classMark) in item"
+            class="lottery-unit" :class="classMark">
+                <a v-if="img=='抽奖按钮'" href="#" @click.prevent="handClick">
                 </a>
                 <img v-if="img!=='抽奖按钮'" :src="img">
                 <div v-if="img!=='抽奖按钮'" class="mask"></div>
@@ -19,7 +19,7 @@
 export default {
   mounted () {
       this.init('lottery');
-  },  
+  },
   methods : {
       init (id) { // 初始化方法
         if ($("#"+id).find(".lottery-unit").length>0) {
@@ -96,8 +96,8 @@ export default {
             this.click=true; //一次抽奖完成后，设置click为true，可继续抽奖
             return false;
         }
-      }     
-  },  
+      }
+  },
   data () {
     return {
         lottery : {  // 抽奖初始化数据
@@ -113,19 +113,19 @@ export default {
         imgs : [ // 奖品图片
             {  // 第一行奖品
                 // key  标记的className vlaue 奖品图片
-                'lottery-unit lottery-unit-0':'static/img/gift0.jpg',
-                'lottery-unit lottery-unit-1':'static/img/gift1.jpg',
-                'lottery-unit lottery-unit-2':'static/img/gift2.jpg',
+                'lottery-unit-0':'static/img/gift0.jpg',
+                'lottery-unit-1':'static/img/gift1.jpg',
+                'lottery-unit-2':'static/img/gift2.jpg',
             },
             {   // 第二行奖品
-                'lottery-unit lottery-unit-7':'static/img/gift3.jpg',
+                'lottery-unit-7':'static/img/gift3.jpg',
                 '':'抽奖按钮', // 按钮
-                'lottery-unit lottery-unit-3':'static/img/gift7.jpg',
+                'lottery-unit-3':'static/img/gift7.jpg',
             },
             {   // 第三行奖品
-                'lottery-unit lottery-unit-6':'static/img/gift6.jpg',
-                'lottery-unit lottery-unit-5':'static/img/gift5.jpg',
-                'lottery-unit lottery-unit-4':'static/img/gift4.jpg',
+                'lottery-unit-6':'static/img/gift6.jpg',
+                'lottery-unit-5':'static/img/gift5.jpg',
+                'lottery-unit-4':'static/img/gift4.jpg',
             }
         ],
         click:false  //点击开关 保证在抽奖完成前点击无效
@@ -178,5 +178,5 @@ export default {
     top:0;
     background-color: rgba(229, 243, 34, 0.431);
     display:none;
-}    
+}
 </style>
