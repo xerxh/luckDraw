@@ -113,6 +113,7 @@ export default {
         imgs : [ // 奖品图片
             {  // 第一行奖品
                 // key  标记的className vlaue 奖品图片
+
                 'lottery-unit-0':'static/img/gift0.jpg',
                 'lottery-unit-1':'static/img/gift1.jpg',
                 'lottery-unit-2':'static/img/gift2.jpg',
